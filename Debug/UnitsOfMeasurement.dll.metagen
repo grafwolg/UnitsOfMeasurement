@@ -1,0 +1,54 @@
+ImageRuntimeVersion: v4.0.30319
+Assembly UnitsOfMeasurement, Version=1.0.*, Culture=Invariant Language (Invariant Country): 
+	hash=SHA1, flags=PublicKey
+Assembly mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Class UnitsOfMeasurement.Class1: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    metho1(): PrivateScope, Public, HideBySig
+Class UnitsOfMeasurement.Scale: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Int32 factor IsLong : Public
+    Int32 offset IsLong : Public
+Class UnitsOfMeasurement.CoherentUnit: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class UnitsOfMeasurement.PhysikalischeGröße: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class UnitsOfMeasurement.GMasse: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :UnitsOfMeasurement.PhysikalischeGröße
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class UnitsOfMeasurement.Kilogramm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :UnitsOfMeasurement.CoherentUnit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class UnitsOfMeasurement.Dimension<UnitsOfMeasurement::GMasse\,UnitsOfMeasurement::Kilogramm>: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    System.IDisposable
+  Fields:
+    UnitsOfMeasurement.PhysikalischeGröße physikalischeGröße IsByValue : Public, InitOnly
+    UnitsOfMeasurement.CoherentUnit coherentUnit IsByValue : Public, InitOnly
+  Methods:
+    Dispose(): PrivateScope, Public, Final, Virtual, HideBySig
+Class UnitsOfMeasurement.Quantity<UnitsOfMeasurement::GMasse\,UnitsOfMeasurement::Kilogramm\,long>: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    System.IDisposable
+  Methods:
+    ~Quantity<UnitsOfMeasurement::GMasse,UnitsOfMeasurement::Kilogramm,long>(): PrivateScope, Public, HideBySig
+    Dispose(): PrivateScope, Public, Final, Virtual, HideBySig
+Class UnitsOfMeasurement.Masse: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :UnitsOfMeasurement.Quantity<UnitsOfMeasurement::GMasse\,UnitsOfMeasurement::Kilogramm\,long>
+    Void .ctor(Int32, UnitsOfMeasurement.Kilogramm): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(Int32): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Struct UnitsOfMeasurement.Units: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
